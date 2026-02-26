@@ -1,0 +1,17 @@
+Hallazgos: 
+ - Al iniciar sesión por la pagina demoblaze no deja iniciar sesión 
+ - Pero al probar por API el inicio de sesión responde con un AutToken 
+
+Conclusiones:
+ - Primero se analizo desde los DevTools las opciones del Navegador de Chrome validar las APIS aunque en el enunciado ya facilitaba esto pero en mi caso necesitaba validar y ubicar si las API desde la web estaba funcionando y retornando algo
+-Segundo después de analizar se probo en POSTMAN de forma Manual y validar el cuerpo(body) se detecto que era la siguiente:
+{
+    "username": "usuario_unico_2028",
+    "password": "password123"
+} -> Tanto para Crear Usuario , Como para Iniciar Sesion
+
+ para hacer la petición a la API mediante POST se probo la petición y como resultado arrojaba 200 y mensajes de validación como:
+	-  {"errorMessage": "Wrong password."}, 
+	- "errorMessage": "This user already exist.",
+	- "Auth_token: dXN1YXJpb191bmljb18yMDI4MTc3MjY4NQ==" 
+- Ya después de hacer este proceso se empezó a implementar la automatización con la herramienta Karate , Cucumber , Java
