@@ -1,0 +1,10 @@
+{
+  "signup": {
+    "new": { "username": "#('user_' + java.util.UUID.randomUUID().toString().substring(0,8))", "password": "123" },
+    "existent": { "username": "admin", "password": "123" }
+  },
+  "login": {
+    "successful": { "username": "user_51776892", "password": "123" },
+    "failed": { "username": "user_51776892", "password": "password_erroneo" }
+  }
+}

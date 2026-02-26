@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation ('com.intuit.karate:karate-junit5:1.4.1')
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
+sourceSets {
+    test {
+        resources {
+            srcDir 'src/test/java'
+            exclude '**/*.java'
+        }
+    }
+}
